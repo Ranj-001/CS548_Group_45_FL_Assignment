@@ -4,7 +4,7 @@
 
 * Compiled IEEE paper: [`report/Group45_CS548_FL_Term_Paper.pdf`](report/Group45_CS548_FL_Term_Paper.pdf)
 * YouTube walkthrough: *<paste link after upload>*
-* GitHub: <https://github.com/Ranj-001/Group45_CS548_FL_Assignment>
+* GitHub: <https://github.com/Ranj-001/CS548_Group_45_FL_Assignment>
 
 End-to-end implementation of **parameter-efficient federated fine-tuning of LLMs**,
 based on two research papers:
