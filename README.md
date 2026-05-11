@@ -179,6 +179,7 @@ Plagiarism and AI checks are within the limits provided by the course:
 
 * Requirement: plagiarism similarity ≤ 14% and AI content should show `*` via Turnitin.
 * Our report: similarity score = 12% and AI content = `*` via Turnitin.
+* Reports can be seen in Plague_Report folder
 
 ---
 
