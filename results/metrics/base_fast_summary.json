@@ -1,0 +1,9 @@
+{
+  "run_name": "base_fast",
+  "rounds_csv": "results/metrics/base_fast.csv",
+  "clients_csv": "results/metrics/base_fast_clients.csv",
+  "convergence_round": null,
+  "final_test_accuracy": 0.48,
+  "final_test_loss": 1.777720332145691,
+  "total_communication_mb": 0.791107177734375
+}

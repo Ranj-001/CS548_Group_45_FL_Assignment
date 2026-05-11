@@ -1,0 +1,9 @@
+{
+  "run_name": "fedpeptao_sent140",
+  "rounds_csv": "results/metrics/fedpeptao_sent140.csv",
+  "clients_csv": "results/metrics/fedpeptao_sent140_clients.csv",
+  "convergence_round": 22,
+  "final_test_accuracy": 0.5669291338582677,
+  "final_test_loss": 1.0390071268156758,
+  "total_communication_mb": 18.434524536132812
+}

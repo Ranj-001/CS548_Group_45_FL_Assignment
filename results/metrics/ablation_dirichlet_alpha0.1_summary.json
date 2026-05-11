@@ -1,0 +1,9 @@
+{
+  "run_name": "ablation_dirichlet_alpha0.1",
+  "rounds_csv": "results/metrics/ablation_dirichlet_alpha0.1.csv",
+  "clients_csv": "results/metrics/ablation_dirichlet_alpha0.1_clients.csv",
+  "convergence_round": null,
+  "final_test_accuracy": 0.5049115913555993,
+  "final_test_loss": 1.7854022218576817,
+  "total_communication_mb": 10.475921630859375
+}

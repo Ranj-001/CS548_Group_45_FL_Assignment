@@ -1,0 +1,9 @@
+{
+  "run_name": "fedpeptao_shakespeare",
+  "rounds_csv": "results/metrics/fedpeptao_shakespeare.csv",
+  "clients_csv": "results/metrics/fedpeptao_shakespeare_clients.csv",
+  "convergence_round": null,
+  "final_test_accuracy": 0.0881578947368421,
+  "final_test_loss": 3.168974018096924,
+  "total_communication_mb": 7.3551177978515625
+}

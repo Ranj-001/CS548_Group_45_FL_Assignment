@@ -1,0 +1,35 @@
+# =====================================================================
+# FedPepTAO on the Shakespeare character-level dataset (LEAF benchmark).
+# Each "client" is one speaking role. We coerce the task to a 26-way
+# character classification (next character) for compactness.
+# =====================================================================
+
+run_name: fedpeptao_shakespeare
+
+framework:
+  num_rounds: 15
+  num_clients: 20
+  fraction_fit: 0.5
+  local_epochs: 2
+  local_batch_size: 32
+  optimizer: adamw
+  learning_rate: 5.0e-3
+  strategy: fedyogi
+  server_lr: 1.0e-2
+  convergence_threshold: 0.30
+
+data:
+  dataset: shakespeare
+  partition: iid             # natural client split — IID after sharding
+  num_classes: 27
+  max_seq_len: 48
+  num_samples_per_client: 192
+
+model:
+  method: prompt_tuning
+  backbone: tiny_fallback    # custom char-level transformer
+  hidden_size: 64
+  num_hidden_layers: 2
+  num_attention_heads: 4
+  vocab_size: 128
+  prompt_length: 8

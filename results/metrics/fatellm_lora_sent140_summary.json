@@ -1,0 +1,9 @@
+{
+  "run_name": "fatellm_lora_sent140",
+  "rounds_csv": "results/metrics/fatellm_lora_sent140.csv",
+  "clients_csv": "results/metrics/fatellm_lora_sent140_clients.csv",
+  "convergence_round": null,
+  "final_test_accuracy": 0.6318897637795275,
+  "final_test_loss": 1.1328074040375358,
+  "total_communication_mb": 35.40229797363281
+}

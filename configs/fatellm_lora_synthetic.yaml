@@ -1,0 +1,37 @@
+# =====================================================================
+# FATE-LLM (LoRA) on the offline synthetic corpus — used as a sanity
+# check for the LoRA injection + FedAvg/FedAdam aggregation path, where
+# we know the signal-to-noise ratio is well controlled.
+# =====================================================================
+
+run_name: fatellm_lora_synthetic
+
+framework:
+  num_rounds: 20
+  num_clients: 10
+  fraction_fit: 0.5
+  local_epochs: 3
+  local_batch_size: 32
+  optimizer: adamw
+  learning_rate: 5.0e-3
+  strategy: fedadam
+  server_lr: 1.0e-2
+  convergence_threshold: 0.80
+
+data:
+  dataset: synthetic
+  partition: dirichlet
+  dirichlet_alpha: 0.5
+  num_classes: 2
+  max_seq_len: 32
+  num_samples_per_client: 256
+
+model:
+  method: lora
+  backbone: tiny_fallback
+  hidden_size: 128
+  num_hidden_layers: 2
+  num_attention_heads: 4
+  vocab_size: 8192
+  lora_rank: 8
+  lora_alpha: 16

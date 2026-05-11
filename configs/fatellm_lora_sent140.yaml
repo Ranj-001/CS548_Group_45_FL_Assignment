@@ -1,0 +1,33 @@
+# =====================================================================
+# FATE-LLM (LoRA) on the Sent140-style task.
+# Only the LoRA A/B matrices are trained and communicated.
+# =====================================================================
+
+run_name: fatellm_lora_sent140
+
+framework:
+  num_rounds: 25
+  num_clients: 10
+  fraction_fit: 0.5
+  local_epochs: 2
+  local_batch_size: 32
+  optimizer: adamw
+  learning_rate: 1.0e-3
+  strategy: fedadam
+  server_lr: 5.0e-3
+  convergence_threshold: 0.75
+
+data:
+  dataset: sent140
+  partition: dirichlet
+  dirichlet_alpha: 0.5
+  num_classes: 2
+  max_seq_len: 64
+  num_samples_per_client: 256
+
+model:
+  method: lora
+  backbone: prajjwal1/bert-tiny
+  lora_rank: 8
+  lora_alpha: 16
+  lora_dropout: 0.05

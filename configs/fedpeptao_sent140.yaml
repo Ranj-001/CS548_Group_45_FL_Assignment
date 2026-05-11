@@ -1,0 +1,33 @@
+# =====================================================================
+# FedPepTAO on a Sent140-style sentiment classification task.
+#  - prompt tuning over a frozen pretrained BERT-tiny
+#  - FedAdam server-side adaptive optimisation
+#  - Dirichlet α=0.1 non-IID partitioning across 10 clients
+# =====================================================================
+
+run_name: fedpeptao_sent140
+
+framework:
+  num_rounds: 25
+  num_clients: 10
+  fraction_fit: 0.5
+  local_epochs: 3
+  local_batch_size: 32
+  optimizer: adamw
+  learning_rate: 5.0e-3
+  strategy: fedadam
+  server_lr: 1.0e-2
+  convergence_threshold: 0.75
+
+data:
+  dataset: sent140
+  partition: dirichlet
+  dirichlet_alpha: 0.5
+  num_classes: 2
+  max_seq_len: 64
+  num_samples_per_client: 256
+
+model:
+  method: prompt_tuning
+  backbone: prajjwal1/bert-tiny
+  prompt_length: 20

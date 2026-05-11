@@ -1,0 +1,58 @@
+# =====================================================================
+# Base configuration. Every other YAML overrides keys from this file.
+# Parameters follow the "Default Experimental Configuration" prescribed
+# by the assignment brief.
+# =====================================================================
+
+run_name: base
+
+seed: 42
+output_dir: results
+
+framework:
+  num_rounds: 20
+  num_clients: 10
+  fraction_fit: 0.5          # 50 % client participation per round
+  fraction_eval: 0.0         # central evaluation only
+  min_available_clients: 2
+  local_epochs: 5
+  local_batch_size: 32
+  optimizer: sgd_momentum    # sgd_momentum | adamw
+  learning_rate: 0.01
+  momentum: 0.9
+  weight_decay: 0.0
+  strategy: fedadam          # fedavg | fedadam | fedyogi | fedadagrad
+  server_lr: 1.0e-2
+  server_momentum: 0.9
+  server_beta1: 0.9
+  server_beta2: 0.99
+  server_tau: 1.0e-3         # adaptive-optimizer numerical stability
+  convergence_threshold: 0.80
+  num_cpus_per_client: 1
+  num_gpus_per_client: 0.0
+
+data:
+  dataset: synthetic         # synthetic | sent140 | shakespeare | agnews
+  partition: dirichlet       # iid | dirichlet
+  dirichlet_alpha: 0.1
+  num_classes: 2
+  max_seq_len: 64
+  num_samples_per_client: 256
+  data_root: ./.cache/data
+  test_size: 0.2
+
+model:
+  method: prompt_tuning      # prompt_tuning | lora | full
+  backbone: tiny_fallback    # HF id (e.g. prajjwal1/bert-tiny) or tiny_fallback
+  hidden_size: 128
+  num_hidden_layers: 2
+  num_attention_heads: 4
+  vocab_size: 8192
+  prompt_length: 20          # FedPepTAO soft-prompt tokens
+  lora_rank: 8               # FATE-LLM LoRA rank
+  lora_alpha: 16
+  lora_dropout: 0.05
+
+logging:
+  log_level: INFO
+  log_every: 1

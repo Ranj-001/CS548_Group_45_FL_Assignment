@@ -1,0 +1,34 @@
+# =====================================================================
+# Ablation sweep over Dirichlet α ∈ {0.01, 0.1, 0.5, 1.0} and IID.
+# main.py reads `ablation.dirichlet_alphas` and runs them sequentially.
+# =====================================================================
+
+run_name: ablation_dirichlet
+
+framework:
+  num_rounds: 15
+  num_clients: 10
+  fraction_fit: 0.5
+  local_epochs: 3
+  local_batch_size: 32
+  optimizer: adamw
+  learning_rate: 5.0e-3
+  strategy: fedadam
+  server_lr: 1.0e-2
+
+data:
+  dataset: synthetic         # fast and self-contained for ablations
+  partition: dirichlet
+  dirichlet_alpha: 0.1
+  num_classes: 4
+  max_seq_len: 32
+  num_samples_per_client: 256
+
+model:
+  method: prompt_tuning
+  backbone: tiny_fallback
+  prompt_length: 10
+
+ablation:
+  dirichlet_alphas: [0.01, 0.1, 0.5, 1.0]
+  include_iid: true
