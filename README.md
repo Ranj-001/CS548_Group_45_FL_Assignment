@@ -3,7 +3,7 @@
 **CS548 Federated Learning Term Paper · Group 45 · IIT Patna · 2026.**
 
 * Compiled IEEE paper: [`report/Group45_CS548_FL_Term_Paper.pdf`](report/Group45_CS548_FL_Term_Paper.pdf)
-* YouTube walkthrough: *<paste link after upload>*
+* YouTube walkthrough: (https://youtu.be/AVZ1QiOsY5g)
 * GitHub: <https://github.com/Ranj-001/CS548_Group_45_FL_Assignment>
 
 End-to-end implementation of **parameter-efficient federated fine-tuning of LLMs**,
