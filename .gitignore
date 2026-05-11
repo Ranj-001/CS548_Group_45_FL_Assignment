@@ -1,0 +1,37 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+.venv/
+venv/
+env/
+.pytest_cache/
+.mypy_cache/
+
+# Data + caches
+.cache/
+*.bin
+*.pt
+*.safetensors
+
+# OS / editor
+.DS_Store
+.idea/
+.vscode/
+
+# Logs
+*.log
+
+# Tool / harness state
+.claude/
+.sixth/
+
+# LaTeX intermediate files
+report/paper/*.aux
+report/paper/*.log
+report/paper/*.out
+report/paper/*.toc
+report/paper/*.bbl
+report/paper/*.blg
+report/paper/*.synctex.gz

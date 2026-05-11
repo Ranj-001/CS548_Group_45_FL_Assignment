@@ -29,6 +29,7 @@ The codebase realises both ideas as Flower simulations:
 ```
 FL_Assignment/
 ├── README.md
+├── Makefile                 # Convenience targets (smoke/all)
 ├── requirements.txt
 ├── configs/                 # YAML experiment configs
 │   ├── base.yaml
@@ -36,6 +37,8 @@ FL_Assignment/
 │   ├── fedpeptao_shakespeare.yaml
 │   ├── fatellm_lora_sent140.yaml
 │   └── ablation_dirichlet.yaml
+├── notebooks/
+│   └── analysis.py           # Analysis helper script
 ├── src/
 │   ├── __init__.py
 │   ├── main.py              # CLI entry point — runs a Flower simulation
@@ -60,7 +63,9 @@ FL_Assignment/
 ├── tests/
 │   └── test_smoke.py
 └── report/
-    └── report.md            # IEEE-format skeleton
+  ├── Group45_CS548_FL_Term_Paper.pdf
+  └── paper/
+    └── bare_jrnl.tex     # LaTeX source
 ```
 
 ---
@@ -167,20 +172,29 @@ fixed seed and a single worker. We pin `transformers`, `torch`, and `flwr` in
 
 ---
 
-## 7. Deliverables checklist
+## 7. Turnitin summary
+
+Plagiarism and AI checks are within the limits provided by the course:
+
+* Requirement: plagiarism similarity ≤ 14% and AI content should show `*` via Turnitin.
+* Our report: similarity score = 12% and AI content = `*` via Turnitin.
+
+---
+
+## 8. Deliverables checklist
 
 - [x] Code repository with prescribed structure.
 - [x] YAML configs for every reported experiment.
 - [x] `results/metrics/*.csv` for every run.
 - [x] Plots at ≥300 DPI (PDF + PNG) in `results/plots/`.
-- [x] IEEE-format report skeleton in `report/`.
+- [x] Final IEEE-format PDF in `report/Group45_CS548_FL_Term_Paper.pdf`.
 - [x] `requirements.txt` with pinned versions.
 - [x] `scripts/run_all.sh` to re-run every experiment.
 - [x] Smoke test (`pytest tests/test_smoke.py`).
 
 ---
 
-## 8. References
+## 9. References
 
 * Che, T., Liu, J., Zhou, Y. et al. *Federated Learning of Large Language Models
   with Parameter-Efficient Prompt Tuning and Adaptive Optimization.* EMNLP 2023.
