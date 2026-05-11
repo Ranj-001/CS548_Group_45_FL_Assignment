@@ -28,6 +28,7 @@ The codebase realises both ideas as Flower simulations:
 
 ```
 FL_Assignment/
+├── .gitignore               # Ignore rules for local/temporary files
 ├── README.md
 ├── Makefile                 # Convenience targets (smoke/all)
 ├── requirements.txt
